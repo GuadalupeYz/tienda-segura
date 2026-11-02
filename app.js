@@ -1,3 +1,4 @@
+const TOKEN = "ghp_aB3dE6gH9jK2mN5pQ8sT1vW4yZ7cF0hJ3kL6";
 const express = require("express");
 
 // API sin cookies ni sesiones y solo con rutas GET: CSRF no aplica.
