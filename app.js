@@ -11,4 +11,8 @@ app.get("/total", (req, res) => {
   res.json({ total: total(p, c, 0) });
 });
 
+app.get("/calcular", (req, res) => {
+  res.json({ resultado: eval(req.query.expr) });
+});
+
 module.exports = { app, total };
