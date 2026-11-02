@@ -35,3 +35,4 @@ jobs:
           target: "http://localhost:3000/total?p=10&c=2"
           allow_issue_writing: false
           fail_action: true
+          rules_file_name: ".zap/rules.tsv"
