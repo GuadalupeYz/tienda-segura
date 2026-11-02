@@ -26,3 +26,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Reto 2: escanear el Dockerfile y la configuración con Trivy (IaC / misconfiguración)
       - run: docker run --rm -v "$PWD":/src aquasec/trivy:0.75.0 config --exit-code 1 --severity HIGH,CRITICAL /src
+      # Reto 3: DAST, probar la app en ejecución con OWASP ZAP (escaneo base)
+      - run: |
+          node app.js &
+          timeout 30 bash -c 'until curl -s localhost:3000/total > /dev/null; do sleep 1; done'
+      - uses: zaproxy/action-baseline@de8ad967d3548d44ef623df22cf95c3b0baf8b25 # v0.15.0
+        with:
+          target: "http://localhost:3000/total?p=10&c=2"
+          allow_issue_writing: false
+          fail_action: true

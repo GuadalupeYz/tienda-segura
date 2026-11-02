@@ -16,4 +16,11 @@ app.get("/calcular", (req, res) => {
   res.json({ resultado });
 });
 
+// Levantar el servidor solo si se ejecuta directamente (node app.js),
+// no cuando los tests importan el módulo.
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`tienda-segura escuchando en el puerto ${PORT}`));
+}
+
 module.exports = { app, total };
