@@ -1,0 +1,23 @@
+{
+  "name": "tienda-segura",
+  "version": "1.0.0",
+  "description": "Taller DevSecOps: app de ejemplo con pipeline seguro en GitHub Actions",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuadalupeYz/tienda-segura.git"
+  },
+  "keywords": [],
+  "author": "GuadalupeYz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuadalupeYz/tienda-segura/issues"
+  },
+  "homepage": "https://github.com/GuadalupeYz/tienda-segura#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
